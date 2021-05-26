@@ -1,0 +1,4 @@
+std = "roblox+testez"
+
+[config]
+shadowing = { ignore_pattern = "^(_|self)" }

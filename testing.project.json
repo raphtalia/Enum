@@ -1,0 +1,14 @@
+{
+    "name": "Enum - Testing",
+    "tree": {
+        "$className": "DataModel",
+
+        "ReplicatedStorage": {
+            "$className": "ReplicatedStorage",
+  
+            "Enum": {
+                "$path": "src"
+            }
+        }
+    }
+  }
