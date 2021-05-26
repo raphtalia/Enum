@@ -17,12 +17,8 @@ print(Enum.KeyCode.W.EnumType) --> KeyCode
 local TestEnum = Enum.new(
     "TestEnum",
     {
-        Name = "Foo",
-        Value = 0,
-    },
-    {
-        Name = "Bar",
-        Value = 1
+        Foo = 0,
+        Bar = 1,
     }
 )
 print(Enum.TestEnum == TestEnum) --> true

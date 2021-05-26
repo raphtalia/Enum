@@ -2,7 +2,7 @@ local newEnumItem = require(script.Parent.EnumItem).new
 
 local Enum = {}
 
-function Enum.new(enumName, ...)
+function Enum.new(enumName, enumItemsList)
     local enum = newproxy(true)
     local meta = getmetatable(enum)
 
@@ -38,8 +38,8 @@ function Enum.new(enumName, ...)
         error(i.. " cannot be assigned to")
     end
 
-    for _,enumItem in ipairs({...}) do
-        enumItems[enumItem.Name] = newEnumItem(enumItem.Name, enumItem.Value, enum)
+    for enumItemName, enumItemValue in pairs(enumItemsList) do
+        enumItems[enumItemName] = newEnumItem(enumItemName, enumItemValue, enum)
     end
 
     return enum

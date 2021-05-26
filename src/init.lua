@@ -7,9 +7,9 @@ local meta = getmetatable(Enum)
 local methods = {}
 local enums = {}
 
-function methods.new(enumName, ...)
+function methods.new(enumName, enumItemsList)
     -- If an enum with the same name is used it is overwritten
-    local enum = newEnum(enumName, ...)
+    local enum = newEnum(enumName, enumItemsList)
     enums[enumName] = enum
     return enum
 end
