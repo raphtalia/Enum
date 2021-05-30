@@ -22,12 +22,12 @@ function EnumItem.new(name, value, type)
         if v then
             return v
         else
-            error(("%s is not a valid member of \"%s\""):format(i, tostring(enumItem)))
+            error(("%s is not a valid member of \"%s\""):format(i, tostring(enumItem)), 2)
         end
     end
 
     function meta.__newindex(_, i)
-        error(i.. " cannot be assigned to")
+        error(i.. " cannot be assigned to", 2)
     end
 
     return enumItem

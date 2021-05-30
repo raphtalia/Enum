@@ -19,6 +19,14 @@ function Enum.new(enumName, enumItemsList)
         return list
     end
 
+    function methods:FromValue(enumValue)
+        for _,enumItem in pairs(enumItems) do
+            if enumItem.Value == enumValue then
+                return enumItem
+            end
+        end
+    end
+
     meta.__metatable = "The metatable is locked"
     meta.__tostring = function()
         return enumName
@@ -30,15 +38,32 @@ function Enum.new(enumName, enumItemsList)
         if v then
             return v
         else
-            error(("%s is not a valid member of \"%s\""):format(i, "Enum.".. enumName))
+            error(("%s is not a valid member of \"%s\""):format(i, "Enum.".. enumName), 2)
         end
     end
 
     function meta.__newindex(_, i)
-        error(i.. " cannot be assigned to")
+        error(i.. " cannot be assigned to", 2)
     end
 
-    for enumItemName, enumItemValue in pairs(enumItemsList) do
+    for i, v in pairs(enumItemsList) do
+        local enumItemName, enumItemValue
+
+        local t = type(i)
+        if t == "number" then
+            enumItemName = v
+            enumItemValue = i
+
+            if type(v) ~= "string" then
+                error("Expected string as value when key is a number", 4)
+            end
+        elseif t == "string" then
+            enumItemName = i
+            enumItemValue = v
+        else
+            error("Expected number or string as key", 4)
+        end
+
         enumItems[enumItemName] = newEnumItem(enumItemName, enumItemValue, enum)
     end
 
