@@ -8,6 +8,18 @@
   
             "Enum": {
                 "$path": "src"
+            },
+
+            "TestEZ": {
+                "$path": "modules/TestEZ"
+            }
+        },
+
+        "ServerScriptService": {
+            "$className": "ServerScriptService",
+
+            "tests": {
+                "$path": "tests"
             }
         }
     }
