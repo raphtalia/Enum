@@ -19,6 +19,9 @@ function Enum.new(enumName, enumItemsList)
         return list
     end
 
+    --[[
+    Not compatible with Roblox Enums
+
     function methods:FromValue(enumValue)
         for _,enumItem in pairs(enumItems) do
             if enumItem.Value == enumValue then
@@ -26,6 +29,7 @@ function Enum.new(enumName, enumItemsList)
             end
         end
     end
+    ]]
 
     meta.__metatable = "The metatable is locked"
     meta.__tostring = function()
