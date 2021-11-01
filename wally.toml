@@ -1,0 +1,9 @@
+[package]
+name = "raphtalia/enum"
+description = "Roblox custom Enum library"
+version = "1.0.0"
+license = "MIT"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
