@@ -1,0 +1,13 @@
+title = "Enum"
+
+gitRepoUrl = "https://github.com/raphtalia/Enum"
+gitSourceBranch = "main"
+
+classOrder = [
+    "Enums",
+    "Enum",
+    "EnumItem",
+]
+
+[footer]
+copyright = "Copyright © 2021 raphtalia"

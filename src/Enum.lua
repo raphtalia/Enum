@@ -1,7 +1,26 @@
 local newEnumItem = require(script.Parent.EnumItem).new
 
+--[=[
+    @class Enum
+    Mirror of Roblox's
+    [Enum](https://developer.roblox.com/en-us/api-reference/datatype/Enum)
+    DataType.
+]=]
 local Enum = {}
 
+--[=[
+    @within Enum
+    @private
+    @return Enum
+    Creates a new Enum.
+]=]
+--[=[
+    @within Enum
+    @function GetEnumItems
+    @return EnumItem[]
+    Returns an array containing all of the EnumItem options available for
+    this enum.
+]=]
 function Enum.new(enumName, enumItemsList)
     local enum = newproxy(true)
     local meta = getmetatable(enum)

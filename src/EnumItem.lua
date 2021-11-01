@@ -1,5 +1,42 @@
+--[=[
+    @class EnumItem
+    Mirror of Roblox's
+    [EnumItem](https://developer.roblox.com/en-us/api-reference/datatype/EnumItem)
+    DataType.
+]=]
 local EnumItem = {}
 
+--[=[
+    @within EnumItem
+    @private
+    @return EnumItem
+    Creates a new EnumItem.
+]=]
+--[=[
+    @within EnumItem
+    @readonly
+    @prop Name string
+    The name of the EnumItem.
+]=]
+--[=[
+    @within EnumItem
+    @readonly
+    @prop Value any
+    The value of the EnumItem.
+]=]
+--[=[
+    @within EnumItem
+    @readonly
+    @prop EnumType string
+    The type of the EnumItem.
+]=]
+--[=[
+    @within EnumItem
+    @function IsA
+    @param EnumType string
+    @return boolean
+    Returns if the EnumItem is of the given EnumType.
+]=]
 function EnumItem.new(name, value, type)
     local enumItem = newproxy(true)
     local meta = getmetatable(enumItem)

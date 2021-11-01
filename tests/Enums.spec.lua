@@ -29,7 +29,6 @@ return function()
         end)
     end)
 
-    --[[
     describe("Enums:FromValue()", function()
         it("should return KeyCode.W", function()
             expect(Enums:FromValue("KeyCode", 119)).to.equal(Enum.KeyCode.W)
@@ -39,7 +38,6 @@ return function()
             expect(Enums:FromValue("TestEnum", 1)).to.equal(Enums.TestEnum.Foo)
         end)
     end)
-    ]]
 
     describe("Enums:Find()", function()
         it("should return KeyCode", function()
@@ -48,6 +46,12 @@ return function()
 
         it("should return TestEnum", function()
             expect(Enums:Find("TestEnum")).to.equal(Enums.TestEnum)
+        end)
+
+        it("shouldn't error if Enum doesn't exist", function()
+            expect(function()
+                Enums:Find("Foo")
+            end).to.never.throw()
         end)
     end)
 
