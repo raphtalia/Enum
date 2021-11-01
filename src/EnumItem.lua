@@ -11,6 +11,10 @@ function EnumItem.new(name, value, type)
         EnumType = type,
     }
 
+    function props:IsA(enumType)
+        return typeName == enumType
+    end
+
     meta.__metatable = "The metatable is locked"
     meta.__tostring = function()
         return ("Enum.%s.%s"):format(typeName, name)

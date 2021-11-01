@@ -11,6 +11,7 @@ return function()
         end)
     end)
 
+    --[[
     describe("Enum:FromValue()", function()
         it("should return A", function()
             expect(testEnum:FromValue(1)).to.equal(testEnum.A)
@@ -20,6 +21,7 @@ return function()
             expect(testEnum:FromValue(4)).to.equal(nil)
         end)
     end)
+    ]]
 
     describe("Enum.__metatable", function()
         it("should return string", function()

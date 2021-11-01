@@ -19,6 +19,16 @@ return function()
         end)
     end)
 
+    describe("EnumItem:IsA()", function()
+        it("should be true", function()
+            expect(testEnumItem:IsA("TestEnum")).to.be.equal(true)
+        end)
+
+        it("should be false", function()
+            expect(testEnumItem:IsA("Material")).to.be.equal(false)
+        end)
+    end)
+
     describe("Enums.__metatable", function()
         it("should return string", function()
             expect(getmetatable(testEnumItem)).to.be.a("string")
